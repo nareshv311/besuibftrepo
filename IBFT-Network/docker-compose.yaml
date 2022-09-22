@@ -1,0 +1,63 @@
+version: "3"
+services:
+  node-1:
+    image: hyperledger/besu:22.1.0-RC5-SNAPSHOT
+    container_name: "node-1"
+    ports:
+      - 8545:8545
+      - 30303:30303
+    volumes:
+      - .:/usr/app/
+    networks:
+      ibftnetwork:
+        ipv4_address: 172.23.0.2
+    command: --config-file=/usr/app/node-1/config.toml
+
+  node-2:
+    image: hyperledger/besu:22.1.0-RC5-SNAPSHOT
+    container_name: "node-2"
+    ports:
+      - 8546:8546
+      - 30304:30304
+    volumes:
+      - .:/usr/app/
+    networks:
+      ibftnetwork:
+        ipv4_address: 172.23.0.3
+    command: --config-file=/usr/app/node-2/config.toml
+
+  node-3:
+    image: hyperledger/besu:22.1.0-RC5-SNAPSHOT
+    container_name: "node-3"
+    ports:
+      - 8547:8547
+      - 30305:30305
+    volumes:
+      - .:/usr/app/
+    networks:
+      ibftnetwork:
+        ipv4_address: 172.23.0.4
+    command: --config-file=/usr/app/node-3/config.toml
+
+  node-4:
+    image: hyperledger/besu:22.1.0-RC5-SNAPSHOT
+    container_name: "node-4"
+    ports:
+      - 8548:8548
+      - 30306:30306
+    volumes:
+      - .:/usr/app/
+    networks:
+      ibftnetwork:
+        ipv4_address: 172.23.0.5
+    command: --config-file=/usr/app/node-4/config.toml
+
+volumes:
+  .:
+networks:
+    ibftnetwork:
+      driver: bridge
+      ipam:
+        config:
+          - subnet: 172.23.0.0/16
+            gateway: 172.23.0.1

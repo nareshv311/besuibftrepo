@@ -1,0 +1,18 @@
+data-path="/usr/app/node-3/data"
+
+bootnodes=["enode://601f2dff9cd853b9092344038d89a0f27400de6968bb835366af033136afaf517c638f576aae753a18aa485307f6eabcdd9be5353417990b2e7e3630b28b814d@172.23.0.2:30303"]
+
+rpc-http-enabled=true
+rpc-http-api=["ETH", "NET", "IBFT"]
+rpc-http-port=8547
+rpc-http-host="0.0.0.0"
+
+discovery-enabled=false
+
+p2p-port=30305
+
+host-allowlist=["*"]
+
+rpc-http-cors-origins=["all"]
+
+genesis-file="/usr/app/genesis.json"

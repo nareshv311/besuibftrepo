@@ -1,0 +1,14 @@
+data-path="/usr/app/node-1/data"
+
+rpc-http-enabled=true
+rpc-http-api=["ETH", "NET", "IBFT", "ADMIN"]
+rpc-http-port=8545
+rpc-http-host="0.0.0.0"
+
+discovery-enabled=false
+
+host-allowlist=["*"]
+
+rpc-http-cors-origins=["all"]
+
+genesis-file="/usr/app/genesis.json"
